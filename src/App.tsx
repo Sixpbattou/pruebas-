@@ -49,9 +49,12 @@ export default function App() {
       };
 
       sse.onerror = (err) => {
-        console.error('SSE connection error, falling back to HTTP polling:', err);
-        setSyncStatus('disconnected');
-        // Start backup polling if SSE fails and is not already running
+        console.warn('SSE connection failed. Falling back to HTTP polling:', err);
+        if (sse) {
+          sse.close();
+          sse = null;
+        }
+        // Start backup polling if not already running
         if (!pollInterval) {
           pollInterval = setInterval(fetchInitialState, 4000);
         }
