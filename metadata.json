@@ -1,0 +1,6 @@
+{
+  "name": "FitSync Coach & Client Platform",
+  "description": "Plataforma SaaS profesional de gestión de clientes para entrenadores personales con sincronización en tiempo real e inteligencia artificial integrada para entrenamientos y nutrición deportiva.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
