@@ -1,16 +1,16 @@
 {
   "name": "FitSync Coach & Client Platform",
   "short_name": "FitSync",
-  "description": "Plataforma SaaS profesional de gestión de clientes para entrenadores personales con sincronización en tiempo real e inteligencia artificial integrada para entrenamientos y nutrición deportiva.",
-  "id": "/?homescreen=1",
+  "description": "Plataforma SaaS profesional de gestión para entrenadores personales con IA y sincronización en tiempo real.",
+  "id": "/",
   "scope": "/",
-  "start_url": "/?homescreen=1",
+  "start_url": "/",
   "lang": "es-ES",
   "dir": "ltr",
   "display": "standalone",
   "background_color": "#0a0a0a",
   "theme_color": "#10b981",
-  "orientation": "portrait-primary",
+  "orientation": "portrait",
   "categories": ["fitness", "sports", "productivity"],
   "iarc_rating_id": "e963b53f-a367-4fb8-8575-80252e18d6bc",
   "prefer_related_applications": false,
@@ -38,14 +38,14 @@
   "screenshots": [
     {
       "src": "/screenshot-mobile.jpg",
-      "sizes": "1080x1920",
+      "sizes": "768x1376",
       "type": "image/jpeg",
       "form_factor": "narrow",
       "label": "FitSync Mobile Coach View"
     },
     {
       "src": "/screenshot-desktop.jpg",
-      "sizes": "1920x1080",
+      "sizes": "1376x768",
       "type": "image/jpeg",
       "form_factor": "wide",
       "label": "FitSync Desktop Administration Panel"
@@ -57,30 +57,30 @@
       "short_name": "Clientes",
       "description": "Acceso rápido al listado de clientes activos",
       "url": "/?tab=clientes",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
     },
     {
       "name": "Administrar Suscripciones",
       "short_name": "Suscripciones",
       "description": "Ver pagos y planes de Stripe",
       "url": "/?tab=facturacion",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
     }
   ],
   "file_handlers": [
     {
       "action": "/?open-file=1",
+      "name": "Archivo de FitSync",
       "accept": {
         "application/json": [".fitsync", ".json"]
       },
       "icons": [
         {
-          "src": "/icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
+          "src": "/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
         }
-      ],
-      "launch_type": "single-client"
+      ]
     }
   ],
   "launch_handler": {
@@ -95,7 +95,6 @@
   "share_target": {
     "action": "/?share-target=1",
     "method": "GET",
-    "enctype": "application/x-www-form-urlencoded",
     "params": {
       "title": "title",
       "text": "text",
@@ -109,12 +108,12 @@
       "description": "Ver resumen del MRR y suscripciones activas.",
       "tag": "fitsync-stats",
       "template": "stats-widget",
-      "ms_ac_template": "stats-widget.json",
+      "ms_ac_template": "/stats-widget.json",
       "icons": [
         {
-          "src": "/icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
+          "src": "/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
         }
       ]
     }
@@ -122,13 +121,16 @@
   "edge_side_panel": {
     "preferred_width": 480
   },
-  "display_override": ["window-controls-overlay", "minimal-ui", "standalone"],
+  "display_override": ["standalone", "minimal-ui", "window-controls-overlay"],
   "note_taking": {
     "new_note_url": "/?new-note=1"
   },
   "scope_extensions": [
     {
-      "origin": "https://*.europe-west3.run.app"
+      "origin": "ais-dev-dzjpjxn7ex2pm26xxa4aui-106888726945.europe-west3.run.app"
+    },
+    {
+      "origin": "ais-pre-dzjpjxn7ex2pm26xxa4aui-106888726945.europe-west3.run.app"
     }
   ]
 }
